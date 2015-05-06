@@ -1,0 +1,4 @@
+#!/bin/bash
+kill -9 $(lsof outlog | tail -n +2   |  awk '{print $2}' | tr '\n' ' ') 
+kill -9 $(lsof -i:8001 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+
